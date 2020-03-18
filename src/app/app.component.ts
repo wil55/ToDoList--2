@@ -6,5 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  public tarefa = "";
+  public items = [];
+
+  valor: number = 0;
+
+  deletarCiclo: boolean = false;
+
+
+  mudarValor(){
+    this.valor++;
+  }
+
+  destruirCiclo(){
+    this.deletarCiclo = true;
+  }
+
+  
+  addTarefa(){
+    this.items.push(this.tarefa);
+  }
+  removeTarefa(item) {
+    this.items.splice(this.items.indexOf(item), 1)
+  }
+  
 }
